@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:swworld
+    username: yoda
+    password: power
+    schema: classpath*:db/schema.sql
+    data: classpath*:db/data.sql
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none  
+  h2:
+    console:
+      enabled: true
+      path: "/h2console"
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false    
+logging:
+  level: 
+    root: ERROR
+    controller: DEBUG
+  pattern:
+        console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"   
